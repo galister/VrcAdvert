@@ -7,13 +7,13 @@ using VRC.OSCQuery;
 var rootCommand = new RootCommand
 {
     Name = "VrcAdvert",
-    Description = "Advertise a VRC OSC service."
+    Description = "Advertise your OSC app through OSCQuery."
 };
 
-var nameArg = new Argument<string>("name", "The name of the service.");
-var httpPortArg = new Argument<short>("http_port", "The port to use for OSCQuery.");
-var oscPortArg = new Argument<short>("osc_port", "The port to use for OSC.");
-var trackingOpt = new Option<bool>("--tracking", "Receive tracking data.");
+var nameArg = new Argument<string>("name", "The name of your OSC app. Can be anything as long as it's unique");
+var httpPortArg = new Argument<short>("http_port", "The port to use for OSCQuery. Can be any free TCP port.");
+var oscPortArg = new Argument<short>("osc_port", "The port that your OSC app is listening on. VRC will send OSC avatar parameters to this port.");
+var trackingOpt = new Option<bool>("--tracking", "Add this if you want to receive /tracking/vrsystem messages.");
 
 rootCommand.AddArgument(nameArg);
 rootCommand.AddArgument(httpPortArg);
