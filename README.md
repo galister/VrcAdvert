@@ -24,5 +24,15 @@ Options:
   -?, -h, --help  Show help and usage information
 ```
 
+# Building from source
+
+On Linux, install the build-time dependencies `dotnet-runtime-8.0` and `dotnet-sdk-8.0` using your system's package manager, then run:
+
+```
+dotnet publish -r linux-x64 --self-contained true -p:PublishSingleFile=true -p:PublishTrimmed=true
+```
+
+The final executable is located in `bin/Release/net8.0/linux-x64/publish/VrcAdvert`.
+
 # Works used
 - Sample from [vrc-oscquery-lib](https://github.com/vrchat-community/vrc-oscquery-lib) - MIT License
